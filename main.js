@@ -54,6 +54,12 @@ function getVideoIds(url) {
       return null;
   }
 
+  // Check if URL is valid before creating URL object
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      console.warn('URL does not start with http:// or https://:', url);
+      return null;
+  }
+
   try {
       // Create a URL object to parse the URL
       const urlObj = new URL(url);
@@ -115,22 +121,48 @@ function getYouTubeVideoIds(url) {
 * @param {string} filename - The suggested filename (optional).
 */
 function forceDownload(url, filename = "video.mp4") {
-  fetch(url, { method: 'HEAD' }).then(response => {
-      if (!response.ok || !response.headers.get('Content-Type')?.startsWith('video/')) {
-          window.open(url, '_blank'); // Fallback: open in new tab
-          return;
-      }
+  console.log('Attempting to download:', url, 'as', filename);
+  
+  // Validate URL
+  if (!url || typeof url !== 'string') {
+      console.error('Invalid download URL:', url);
+      alert('Invalid download URL');
+      return;
+  }
 
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-  }).catch(() => {
-      window.open(url, '_blank'); // Fallback on error
-  });
+  // Try to download the file
+  fetch(url, { method: 'HEAD' })
+    .then(response => {
+        console.log('Download response:', response);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const contentType = response.headers.get('Content-Type');
+        console.log('Content-Type:', contentType);
+        
+        if (!contentType || (!contentType.startsWith('video/') && !contentType.startsWith('application/') && !contentType.startsWith('audio/'))) {
+            console.warn('Unexpected content type, proceeding with download anyway');
+        }
+
+        // Create download link
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    })
+    .catch(error => {
+        console.error('Download failed:', error);
+        // Fallback: open in new tab
+        window.open(url, '_blank');
+    });
 }
+
+// Make forceDownload globally accessible
+window.forceDownload = forceDownload;
 
 /**
 * Sanitize HTML content using DOMPurify.
@@ -397,8 +429,10 @@ function generateDownloadButtons(videoData, inputUrl) {
         //      </a>`;
           const qualities = ["mp3", "360", "720", "1080"];
           qualities.forEach(quality => {
+              // Use the first available download URL for YouTube videos
+              const downloadUrl = downloads && downloads.length > 0 ? downloads[0].url : videoSource;
               downloadContainer.innerHTML += `
-    <button class="dlbtns" style="background: #3f5974; color: white; font-weight: bold; margin: 5px;" onclick="forceDownload('${videoSource}', 'video_${quality}.mp4')">
+    <button class="dlbtns" style="background: #3f5974; color: white; font-weight: bold; margin: 5px;" onclick="forceDownload('${downloadUrl}', 'video_${quality}.mp4')">
       Download ${quality.toUpperCase()}
     </button>`;
           });
@@ -407,16 +441,27 @@ function generateDownloadButtons(videoData, inputUrl) {
       downloads.forEach(download => {
           if (download && download.url) {
               const downloadUrl = download.url;
+              
+              // Validate download URL
+              if (!downloadUrl.startsWith('http://') && !downloadUrl.startsWith('https://')) {
+                  console.warn('Invalid download URL:', downloadUrl);
+                  return;
+              }
+              
               const itag = getParameterByName("itag", downloadUrl);
               const bgColor = getBackgroundColor(itag);
-              const videoExt = download.format_id;
-              const videoSize = download.size;
+              const videoExt = download.format_id || 'mp4';
+              const videoSize = download.size || 'Unknown size';
 
               // Use the specified background color #3f5974 for download buttons
               const buttonColor = bgColor === formatColors.defaultColor ? "#3f5974" : bgColor;
               
+              // Sanitize filename
+              const safeTitle = (videoData.data.title || 'video').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 50);
+              const safeFilename = `${safeTitle}_${videoExt}.mp4`;
+              
               downloadContainer.innerHTML += `
-<button class="dlbtns" style="background:${buttonColor}; color: white; font-weight: bold;" onclick="forceDownload('${downloadUrl}', '${videoData.data.title || 'video'}_${videoExt}.mp4')">
+<button class="dlbtns" style="background:${buttonColor}; color: white; font-weight: bold;" onclick="forceDownload('${downloadUrl}', '${safeFilename}')">
   ${sanitizeContent(videoExt)} - ${sanitizeContent(videoSize)}
 </button>
 `;
