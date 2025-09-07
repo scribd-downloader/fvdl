@@ -178,35 +178,56 @@ function getParameterByName(name, url) {
 *******************************/
 
 /**
-* Make an AJAX GET request with retry capability.
+* Make an AJAX GET request with retry capability and multiple API endpoints.
 * @param {string} inputUrl - The input URL for the request.
 * @param {number} retries - Number of retry attempts remaining.
+* @param {number} apiIndex - Current API endpoint index to try.
 */
-function makeRequest(inputUrl, retries = 1) {
-  const requestUrl = `https://vkrdownloader.xyz/server?api_key=vkrdownloader&vkr=${encodeURIComponent(inputUrl)}`;
+function makeRequest(inputUrl, retries = 2, apiIndex = 0) {
+  // Multiple API endpoints as fallbacks
+  const apiEndpoints = [
+    `/api/proxy?url=${encodeURIComponent(inputUrl)}`, // Local Netlify function
+    `https://vkrdownloader.xyz/server?api_key=vkrdownloader&vkr=${encodeURIComponent(inputUrl)}`,
+    `https://api.socialdownloader.com/api/facebook?url=${encodeURIComponent(inputUrl)}`,
+    `https://cors-anywhere.herokuapp.com/https://vkrdownloader.xyz/server?api_key=vkrdownloader&vkr=${encodeURIComponent(inputUrl)}`
+  ];
+  
+  const requestUrl = apiEndpoints[apiIndex] || apiEndpoints[0];
   const retryDelay = 3000; // Initial retry delay in milliseconds
   const maxRetries = retries;
 
   $.ajax({
       url: requestUrl,
       type: "GET",
-      cache: true,
+      cache: false, // Disable cache for production
       async: true,
       crossDomain: true,
       dataType: 'json',
-      timeout: 15000, // Extended timeout for slower networks
+      timeout: 20000, // Extended timeout for production
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
       success: function (data) {
+          console.log(`API ${apiIndex + 1} succeeded:`, data);
           handleSuccessResponse(data, inputUrl);
       },
       error: function (xhr, status, error) {
-          if (retries > 0) {
+          console.log(`API ${apiIndex + 1} failed: ${requestUrl}`);
+          
+          // Try next API endpoint if available
+          if (apiIndex < apiEndpoints.length - 1) {
+              console.log(`Trying next API endpoint...`);
+              setTimeout(() => makeRequest(inputUrl, retries, apiIndex + 1), 1000);
+          } else if (retries > 0) {
+              // Reset to first API and retry with remaining attempts
               let delay = retryDelay * Math.pow(2, maxRetries - retries); // Exponential backoff
-              console.log(`Retrying in ${delay / 1000} seconds... (${retries} attempts left)`);
-              setTimeout(() => makeRequest(inputUrl, retries - 1), delay);
+              console.log(`All APIs failed. Retrying in ${delay / 1000} seconds... (${retries} attempts left)`);
+              setTimeout(() => makeRequest(inputUrl, retries - 1, 0), delay);
           } else {
               const errorMessage = getErrorMessage(xhr, status, error);
-              console.error(`Error Details: ${errorMessage}`);
-              displayError("Unable to fetch the download link after several attempts. Please check the URL or try again and Click agin on Download Button or Refresh web Page.");
+              console.error(`All API endpoints failed. Error Details: ${errorMessage}`);
+              displayError("Unable to fetch the download link after trying multiple services. This might be due to CORS restrictions or API limitations. Please try again later or contact support.");
               document.getElementById("loading").style.display = "none";
           }
       },
@@ -319,13 +340,10 @@ function handleSuccessResponse(data, inputUrl) {
          poster='${thumbnailUrl}' controls playsinline>
       <source src='${videoData.downloads[5]?.url || ''}' type='video/mp4'>
       ${Array.isArray(downloadUrls) ? downloadUrls.map(url => `<source src='${url}' type='video/mp4'>`).join('') : ''}
-      <source src='https://vkrdownloader.xyz/server/dl.php?vkr=${encodeURIComponent(inputUrl)}' type='video/mp4'>
   </video>`;
       const YTvideoHtml = `
           <video style='background: black url(${thumbnailUrl}) center center/cover no-repeat; width:100%; height:500px; border-radius:20px;' 
                  poster='${thumbnailUrl}' controls playsinline>
-               <source src='https://vkrdownloader.xyz/server/redirect.php?vkr=https://youtu.be/${videoId}' type='video/mp4'>
-               <source src='https://vkrdownloader.xyz/server/dl.php?vkr=${inputUrl}' type='video/mp4'>
               ${downloadUrls.map(url => `<source src='${url}' type='video/mp4'>`).join('')}
           </video>`;
       const titleHtml = videoData.title ? `<h3>${sanitizeContent(videoData.title)}</h3>` : "";
@@ -380,9 +398,9 @@ function generateDownloadButtons(videoData, inputUrl) {
           const qualities = ["mp3", "360", "720", "1080"];
           qualities.forEach(quality => {
               downloadContainer.innerHTML += `
-    <iframe style="border: 0; outline: none; display:inline; min-width: 150px; max-height: 45px; height: 45px !important; margin-top: 10px; overflow: hidden;"   sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-downloads allow-downloads-without-user-activation"  scrolling="no"
-     src="https://vkrdownloader.xyz/server/dlbtn.php?q=${encodeURIComponent(quality)}&vkr=${encodeURIComponent(videoSource)}">
-     </iframe>`;
+    <button class="dlbtns" style="background: #3f5974; color: white; font-weight: bold; margin: 5px;" onclick="forceDownload('${videoSource}', 'video_${quality}.mp4')">
+      Download ${quality.toUpperCase()}
+    </button>`;
           });
       }
       // Generate download buttons for available formats
@@ -397,9 +415,8 @@ function generateDownloadButtons(videoData, inputUrl) {
               // Use the specified background color #3f5974 for download buttons
               const buttonColor = bgColor === formatColors.defaultColor ? "#3f5974" : bgColor;
               
-              const redirectUrl = `https://vkrdownloader.xyz/forcedl?forceT=${videoData.data.title}&forceD=${encodeURIComponent(downloadUrl)}`;
               downloadContainer.innerHTML += `
-<button class="dlbtns" style="background:${buttonColor}; color: white; font-weight: bold;" onclick="window.location.href='${redirectUrl}'">
+<button class="dlbtns" style="background:${buttonColor}; color: white; font-weight: bold;" onclick="forceDownload('${downloadUrl}', '${videoData.data.title || 'video'}_${videoExt}.mp4')">
   ${sanitizeContent(videoExt)} - ${sanitizeContent(videoSize)}
 </button>
 `;
