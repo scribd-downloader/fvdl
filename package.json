@@ -1,0 +1,30 @@
+{
+  "name": "facebook-video-downloader",
+  "version": "2.0.0",
+  "description": "Facebook Video Downloader - Download Facebook Reels , Videos & Stories",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:js && vite build",
+    "preview": "vite preview",
+    "start": "vite",
+    "generate-sitemap": "vite build && vite-plugin-sitemap",
+    "build:js": "rollup -c rollup.config.js"
+  },
+  "keywords": [
+    "facebook video downloader",
+    "fb video download",
+    "facebook video download no watermark",
+    "free facebook video downloader"
+  ],
+  "author": "Facebook Video Downloader",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.50.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "vite": "^4.5.14",
+    "vite-plugin-sitemap": "^0.7.1"
+  }
+}

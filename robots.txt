@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://facebookvideo-downloader.com/sitemap.xml
+
+# Crawl-delay (optional - helps prevent overwhelming the server)
+Crawl-delay: 1
+
+# Disallow specific paths if needed (uncomment if you want to block certain areas)
+# Disallow: /admin/
+# Disallow: /private/

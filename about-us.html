@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us</title>
+    <meta name="title" content="About Us">
+    <meta name="description" content="We're dedicated to providing the most reliable, secure, and user-friendly Facebook video downloading service. Our mission is to make video content accessible while respecting privacy and copyright laws.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us">
+    <meta property="og:site_name" content="Facebook Video Downloader">
+    <meta property="og:url" content="https://fvideosdownloader.com/about-us">
+    <meta property="og:description" content="We're dedicated to providing the most reliable, secure, and user-friendly Facebook video downloading service. Our mission is to make video content accessible while respecting privacy and copyright laws.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/FB Video Downloader.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="About Facebook Video Downloader">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us">
+    <meta name="twitter:description" content="We're dedicated to providing the most reliable, secure, and user-friendly Facebook video downloading service. Our mission is to make video content accessible while respecting privacy and copyright laws.">
+    <meta name="twitter:image" content="./images/FB Video Downloader.webp">
+    <meta name="twitter:image:alt" content="About Facebook Video Downloader">
+    <meta name="twitter:site" content="@fbvideodownloader">
+    <meta name="twitter:creator" content="@fbvideodownloader">
+    
+    <!-- Additional Social Media Meta Tags -->
+    <meta name="author" content="Facebook Video Downloader">
+    <meta name="keywords" content="facebook video downloader, fb video download, facebook video download no watermark, free facebook video downloader">
+    <meta name="application-name" content="Facebook Video Downloader">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="FB Video DL">
+    
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+         <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="32x32" />
+     <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="16x16" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./favicon/favicon.svg" color="#3f5974" />
+    <meta name="msapplication-TileColor" content="#3f5974" />
+    <meta name="msapplication-TileImage" content="./favicon/favicon-96x96.png" />
+    <meta name="theme-color" content="#3f5974" />
+    <meta name="msapplication-config" content="./favicon/browserconfig.xml" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<style>
+    .nav-bg{
+        background-color: #3f5974;
+    }
+    .nav-bg .nav-link {
+        color: white !important;
+        font-weight: 600;
+    }
+    .nav-bg .nav-link:hover {
+        color: #f8f9fa !important;
+    }
+    .nav-bg .navbar-toggler-icon {
+        filter: invert(1);
+    }
+    
+    .nav-bg .navbar-nav .nav-item {
+        margin-right: 20px;
+    }
+    .nav-bg .navbar-nav .nav-item:last-child {
+        margin-right: 0;
+    }
+    
+    .nav-bg .dropdown-menu {
+        background-color: white;
+        border: 1px solid #e9ecef;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .nav-bg .dropdown-item:hover {
+        background-color: #3f5974 !important;
+        color: white !important;
+    }
+    .nav-bg .dropdown-item:focus {
+        background-color: #3f5974 !important;
+        color: white !important;
+    }
+
+    .hero-about {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 80px 0;
+    }
+    
+    .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+</style>
+
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg nav-bg">
+            <div class="container-fluid">
+                <a class="d-flex align-items-center" href="/">
+                    <img src="./images/FB Video Downloader.webp" alt="FB Video Downloader" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto"> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                More
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/">Fb Private Video Downloader</a></li>
+                                <li><a class="dropdown-item" href="/disclaimer">Disclaimer</a></li>
+                                <li><a class="dropdown-item" href="/terms-of-service">Terms of Use</a></li>
+                            </ul>
+                        </li>
+                                                 <li class="nav-item">
+                             <a class="nav-link" href="/contact-us">Contact Us</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link active" href="/about-us">About Us</a>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-about">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">About Our Facebook Video Downloader</h1>
+                    <p class="lead mb-5">We're dedicated to providing the most reliable, secure, and user-friendly Facebook video downloading service. Our mission is to make video content accessible while respecting privacy and copyright laws. Our mission is to make video content accessible while respecting privacy and copyright laws.</p>
+                    <a href="/" class="btn btn-light btn-lg px-4">Try Our Downloader</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Our Mission</h2>
+                    <p class="lead text-muted mb-4">To provide a seamless, secure, and efficient way for users to download their favorite Facebook videos while maintaining the highest standards of privacy and legal compliance.</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-shield-check text-primary fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Privacy First</h5>
+                                    <p class="text-muted small mb-0">We never store your data</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-lightning text-success fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Fast & Reliable</h5>
+                                    <p class="text-muted small mb-0">Instant video processing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./images/Copy Facebook Video Url.webp" alt="Our Mission" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-download text-primary fs-1"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Facebook Video Download</h4>
+                        <p class="text-muted text-center">Download high-quality videos from Facebook posts, stories, and reels in multiple formats including HD and SD quality.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-success me-2"></i>HD & SD Quality</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>No Watermark</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>Fast Processing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-music-note text-success fs-1"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Audio Extraction</h4>
+                        <p class="text-muted text-center">Extract audio from Facebook videos and save as MP3 files for music, podcasts, or voice recordings.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-success me-2"></i>MP3 Format</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>High Quality Audio</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>Small File Size</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-phone text-info fs-1"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Mobile Friendly</h4>
+                        <p class="text-muted text-center">Fully responsive design that works perfectly on all devices - smartphones, tablets, and desktop computers.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-success me-2"></i>Responsive Design</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>Touch Optimized</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i>Cross Platform</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fs-1 fw-bold text-primary mb-2">1M+</div>
+                        <p class="text-muted">Videos Downloaded</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fs-1 fw-bold text-success mb-2">500K+</div>
+                        <p class="text-muted">Happy Users</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fs-1 fw-bold text-info mb-2">99.9%</div>
+                        <p class="text-muted">Uptime</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fs-1 fw-bold text-warning mb-2">24/7</div>
+                        <p class="text-muted">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES DETAILS -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Why Choose Our Service?</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-shield-lock text-primary fs-3"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Security & Privacy</h5>
+                            <p class="text-muted">We prioritize your privacy. All video processing happens securely, and we never store your personal data or downloaded content on our servers.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-lightning-charge text-warning fs-3"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Lightning Fast</h5>
+                            <p class="text-muted">Our optimized servers process video links in seconds, providing you with download options almost instantly.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-globe text-success fs-3"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Global Access</h5>
+                            <p class="text-muted">Available worldwide with servers strategically located to provide the best performance regardless of your location.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-phone text-info fs-3"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Mobile Optimized</h5>
+                            <p class="text-muted">Perfect experience on all devices. Download videos directly to your phone, tablet, or computer with ease.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-headset text-secondary fs-3"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>24/7 Support</h5>
+                            <p class="text-muted">Our dedicated support team is always ready to help you with any questions or issues you might encounter.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-arrow-clockwise text-primary fs-3"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Regular Updates</h5>
+                            <p class="text-muted">We continuously update our service to ensure compatibility with Facebook's latest changes and improvements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Our Location & Contact</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="bi bi-geo-alt text-primary me-2"></i>Headquarters</h5>
+                            <p class="text-muted">123 Tech Street<br>Silicon Valley, CA 94025<br>United States</p>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="bi bi-envelope text-primary me-2"></i>Contact Info</h5>
+                            <p class="text-muted">Email: support@fbvideodownloader.com<br>Phone: +1 (555) 123-4567<br>Hours: 24/7 Support</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="bi bi-server text-primary me-2"></i>Server Locations</h5>
+                            <p class="text-muted">• North America (US East/West)<br>• Europe (UK, Germany)<br>• Asia (Singapore, Japan)<br>• Australia (Sydney)</p>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h5><i class="bi bi-shield-check text-primary me-2"></i>Security Certifications</h5>
+                            <p class="text-muted">• SSL/TLS Encryption<br>• GDPR Compliant<br>• ISO 27001 Certified<br>• SOC 2 Type II</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Get in Touch</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-control">
+                                        <option>Select Topic</option>
+                                        <option>Technical Support</option>
+                                        <option>Feature Request</option>
+                                        <option>Bug Report</option>
+                                        <option>General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL & COMPLIANCE -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Legal & Compliance</h2>
+            <div class="row g-4">
+                                 <div class="col-md-6 col-lg-3">
+                     <div class="text-center">
+                         <i class="bi bi-shield-check text-primary fs-1 mb-3"></i>
+                         <h5>Legal Compliance</h5>
+                         <p class="text-muted">We operate in full compliance with international copyright laws and respect intellectual property rights.</p>
+                     </div>
+                 </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="bi bi-shield-lock text-success fs-1 mb-3"></i>
+                        <h5>Privacy Protection</h5>
+                        <p class="text-muted">Your privacy is our priority. We implement strict data protection measures and never share your information.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="bi bi-globe text-info fs-1 mb-3"></i>
+                        <h5>Global Standards</h5>
+                        <p class="text-muted">We adhere to international standards including GDPR, CCPA, and other privacy regulations worldwide.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="bi bi-patch-check text-warning fs-1 mb-3"></i>
+                        <h5>Quality Assurance</h5>
+                        <p class="text-muted">Regular security audits and quality checks ensure our service meets the highest industry standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4" style="background-color: #3f5974;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-white mb-0">&copy; 2025 Fb Video Downloader. All rights reserved.</p>
+                </div>
+                                    <div class="col-md-6 text-md-end">
+                        <div class="mt-2">
+                            <a href="/privacy-policy" class="text-white me-3">Privacy Policy</a>
+                            <a href="/terms-of-service" class="text-white me-3">Terms of Service</a>
+                            <a href="/contact-us" class="text-white me-3">Contact</a>
+                            <a href="/disclaimer" class="text-white">Disclaimer</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
