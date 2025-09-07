@@ -6,7 +6,7 @@ import copy from 'rollup-plugin-copy';
 export default defineConfig({
   plugins: [
     vitePluginSitemap({
-      hostname: 'https://facebookvideo-downloader.com/',
+      hostname: 'https://fvideosdownloader.com/',
       routes: [
         '/',
         '/disclaimer',

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://facebookvideo-downloader.com/sitemap.xml
+Sitemap: https://fvideosdownloader.com/sitemap.xml
