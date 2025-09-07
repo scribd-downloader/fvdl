@@ -23,6 +23,7 @@ export default defineConfig({
         { src: 'main.js', dest: 'dist' }, // Copy main JavaScript
         { src: 'bundle.js', dest: 'dist' }, // Copy bundled JavaScript
         { src: 'src/styles.css', dest: 'dist' }, // Copy CSS file
+        { src: 'google*.html', dest: 'dist' }, // Copy Google Search Console verification files
       ],
       hook: 'closeBundle',
     }),
