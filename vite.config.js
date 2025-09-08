@@ -24,6 +24,7 @@ export default defineConfig({
         { src: 'bundle.js', dest: 'dist' }, // Copy bundled JavaScript
         { src: 'src/styles.css', dest: 'dist' }, // Copy CSS file
         { src: 'google*.html', dest: 'dist' }, // Copy Google Search Console verification files
+        { src: 'BingSiteAuth.xml', dest: 'dist' }, // Copy Bing Webmaster verification file
       ],
       hook: 'closeBundle',
     }),
