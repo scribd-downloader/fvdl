@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Téléchargeur de vidéos Facebook - Télécharger Reels, Vidéos et Stories</title>
+    <meta name="title" content="Téléchargeur de vidéos Facebook - Télécharger Reels, Vidéos et Stories">
+    <meta name="description" content="Téléchargez des vidéos Facebook facilement avec notre téléchargeur rapide et sécurisé. Enregistrez des vidéos en qualité HD ou SD directement sur votre appareil. 100% gratuit, sans inscription, sans filigrane.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="16x16" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./favicon/favicon.svg" color="#3f5974" />
+    <meta name="msapplication-TileColor" content="#3f5974" />
+    <meta name="msapplication-TileImage" content="./favicon/favicon-96x96.png" />
+    <meta name="theme-color" content="#3f5974" />
+    <meta name="msapplication-config" content="./favicon/browserconfig.xml" />
+    <meta property="og:title" content="Téléchargeur de vidéos Facebook - Télécharger Reels, Vidéos et Stories">
+    <meta property="og:site_name" content="Téléchargeur de vidéos Facebook">
+    <meta property="og:url" content="https://fvideosdownloader.com/fr">
+    <meta property="og:description" content="Téléchargez des vidéos Facebook facilement avec notre téléchargeur rapide et sécurisé. Enregistrez des vidéos en qualité HD ou SD directement sur votre appareil. 100% gratuit, sans inscription, sans filigrane.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/FB Video Downloader.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Téléchargeur de vidéos Facebook - Outil en ligne gratuit">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Téléchargeur de vidéos Facebook - Télécharger Reels, Vidéos et Stories">
+    <meta name="twitter:description" content="Téléchargez des vidéos Facebook facilement avec notre téléchargeur rapide et sécurisé. Enregistrez des vidéos en qualité HD ou SD directement sur votre appareil. 100% gratuit, sans inscription, sans filigrane.">
+    <meta name="twitter:image" content="./images/FB Video Downloader.webp">
+    <meta name="twitter:image:alt" content="Téléchargeur de vidéos Facebook - Outil en ligne gratuit">
+    <meta name="twitter:site" content="@fbvideodownloader">
+    <meta name="twitter:creator" content="@fbvideodownloader">
+    
+    <!-- Additional Social Media Meta Tags -->
+    <meta name="author" content="Téléchargeur de vidéos Facebook">
+    <meta name="keywords" content="télécharger vidéo facebook, telechargeur facebook, télécharger reels facebook, télécharger stories facebook, telecharger video hd, facebook video downloader, downloader gratuit">
+    <meta name="application-name" content="Téléchargeur de vidéos Facebook">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="FB Video DL">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+      /* Language dropdown styling */
+      .language-dropdown .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      .language-dropdown .dropdown-item:hover {
+        background-color: #f8f9fa;
+      }
+      .language-dropdown .nav-link {
+        font-weight: 500;
+      }
+      .flag-icon {
+        font-size: 1.1em;
+        line-height: 1;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js" integrity="sha512-Ll+TuDvrWDNNRnFFIM8dOiw7Go7dsHyxRp4RutiIFW/wm3DgDmCnRZow6AqbXnCbpWu93yM1O34q+4ggzGeXVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" crossorigin src="/assets/main-0bdcdfee.js"></script>
+  <link rel="stylesheet" href="/assets/styles-710d99e4.css">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+</head>  
+
+<!-- SEO: canonical & hreflang -->
+<link rel="canonical" href="https://fvideosdownloader.com/fr" />
+<link rel="alternate" hreflang="en" href="https://fvideosdownloader.com/" />
+<link rel="alternate" hreflang="es" href="https://fvideosdownloader.com/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://fvideosdownloader.com/pt" />
+<link rel="alternate" hreflang="de" href="https://fvideosdownloader.com/de" />
+<link rel="alternate" hreflang="fr" href="https://fvideosdownloader.com/fr" />
+<link rel="alternate" hreflang="it" href="https://fvideosdownloader.com/it" />
+<link rel="alternate" hreflang="id" href="https://fvideosdownloader.com/id" />
+<link rel="alternate" hreflang="x-default" href="https://fvideosdownloader.com/" />
+
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-expand-lg nav-bg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="/fr">
+                    <img src="./images/FB Video Downloader.webp" alt="Téléchargeur de vidéos Facebook" class="me-2">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                 <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item dropdown language-dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="me-1 flag-icon">🇫🇷</span> FR
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item d-flex align-items-center" href="/">
+                            <span class="me-2 flag-icon">🇺🇸</span> English
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center" href="/es">
+                            <span class="me-2 flag-icon">🇪🇸</span> Español
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center" href="/pt">
+                            <span class="me-2 flag-icon">🇵🇹</span> Português
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center" href="/de">
+                            <span class="me-2 flag-icon">🇩🇪</span> Deutsch
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center" href="/fr">
+                            <span class="me-2 flag-icon">🇫🇷</span> Français
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center" href="/it">
+                            <span class="me-2 flag-icon">🇮🇹</span> Italiano
+                          </a></li>
+                          <li><a class="dropdown-item d-flex align-items-center" href="/id">
+                            <span class="me-2 flag-icon">🇮🇩</span> Bahasa Indonesia
+                          </a></li>
+                        </ul>
+                      </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Plus
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/">Téléchargeur de vidéos privées</a></li>
+                          <li><a class="dropdown-item" href="/disclaimer">Avertissement légal</a></li>
+                          <li><a class="dropdown-item" href="/terms-of-service">Conditions d'utilisation</a></li>
+                        </ul>
+                      </li>
+                                            <li class="nav-item">
+                             <a class="nav-link" href="/contact-us">Contact</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="/about-us">À propos</a>
+                         </li>
+                 </ul>
+               </div>
+            </div>
+          </nav>
+    </header>
+    <script>
+      // Add sticky shadow on scroll
+      window.addEventListener('scroll', function() {
+        var nav = document.getElementById('mainNavbar');
+        if(window.scrollY > 8) {
+          nav.classList.add('sticky-shadow');
+        } else {
+          nav.classList.remove('sticky-shadow');
+        }
+      });
+    </script>
+    <!-- HERO SECTION / DOWNLOADER -->
+    <main id="main-content">
+      <section class="hero-section py-5 position-relative bg-light" id="downloader">
+        <div class="container-xl">
+          <div class="row justify-content-center align-items-center g-5">
+            <div class="col-12 col-md-10 col-lg-8">
+              <div class="card card-glow p-4 p-md-5 border-0 rounded-4 position-relative overflow-hidden h-100">
+                <h1 class="fw-bold text-center">Téléchargeur de vidéos Facebook</h1>
+                <p class="text-center">Téléchargez des vidéos Facebook facilement avec notre téléchargeur rapide et sécurisé. Enregistrez des vidéos en qualité HD ou SD directement sur votre appareil. 100% gratuit, sans inscription, sans filigrane.</p>
+                <form class="mb-3" autocomplete="off" aria-label="Téléchargeur de vidéos Facebook"
+                onsubmit="event.preventDefault(); document.getElementById('downloadBtn').click();">
+              
+                <div class="input-group input-group-lg shadow-sm">
+                  <!-- Input Field -->
+                  <input id="inputUrl" type="url" 
+                    class="form-control border-0" 
+                    placeholder="Entrez le lien de la vidéo Facebook..." 
+                    aria-label="Coller l'URL de la vidéo Facebook" required>
+              
+                  <!-- Paste Button (inside same group) -->
+                  <button class="btn btn-outline-secondary border-0" type="button" id="pasteBtn"
+                    aria-label="Coller depuis le presse-papiers" title="Coller depuis le presse-papiers">
+                    <i class="bi bi-clipboard"></i>
+                  </button>
+              
+                  <!-- Download Button -->
+                  <button class="btn btn-primary px-3 fw-bold" type="button"
+                    aria-label="Télécharger la vidéo" id="downloadBtn" title="Démarrer le téléchargement">
+                    <i class="bi bi-download me-1"></i> Télécharger
+                  </button>
+                </div>
+              </form>
+               
+                <div id="error" class="alert alert-danger mt-2" style="display:none;"></div>
+                <div id="loading" class="text-center mt-3" style="display: none;">
+                  <div class="centerV">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                  </div>
+                  <p class="mt-3 text-muted text-primary">Traitement de votre vidéo...</p>
+                </div>
+                <div id="container" class="text-center mt-3" style="display: none;">
+                  <div id="thumb" class="mb-3"></div>
+                  <div id="title"></div>
+                  <div id="description" class="mt-3"></div>
+                  <div id="uploader"></div>
+                  <div id="duration"></div>
+                  <div id="extractor"></div>
+                  <div id="downloadURL"></div>
+                  <div id="download"></div>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-3 flex-wrap justify-content-center">
+                  <span class="badge bg-success bg-opacity-10 text-success fw-semibold small">Vidéo HD FB</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-semibold small">Télécharger Reels et Stories</span>
+                  <span class="badge bg-secondary bg-opacity-10 text-secondary fw-semibold small">Sans connexion</span>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-2 justify-content-center">
+                  <span class="badge bg-white text-primary border border-primary fw-semibold small"><i class="bi bi-droplet me-1"></i>Sans filigrane*</span>
+                  <span class="badge bg-white text-success border border-success fw-semibold small"><i class="bi bi-shield-check me-1"></i>Sécurisé et privé</span>
+                  <span class="badge bg-white text-dark border border-dark fw-semibold small"><i class="bi bi-gift me-1"></i>Gratuit pour toujours</span>
+                </div>
+                <ul class="list-inline small text-muted mb-0 steps-preview text-center">
+                  <li class="list-inline-item">1) Coller l'URL de la vidéo Facebook</li>
+                  <li class="list-inline-item">2) Choisir la qualité de la vidéo</li>
+                  <li class="list-inline-item">3) Télécharger la vidéo FB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Additional UI sections from shani.html (How it works, Features, FAQ, etc.) -->
+      <section id="how" class="py-5 bg-white border-top position-relative">
+        <div class="container-xl">
+          <h2 class="fw-bold mb-4 text-center">Comment ça marche</h2>
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card card-glow fade-up h-100 text-center elevate">
+                <div class="mb-3">
+                  <img src="./images/Copy Facebook Video Url.webp" alt="Copier l'URL de la vidéo Facebook" class="img-fluid">
+                </div>
+                <h3 class="h5 fw-semibold mb-2">Copier l'URL de la vidéo Facebook</h3>
+                <p class="text-muted">Trouvez la vidéo Facebook que vous voulez télécharger et copiez son URL depuis la barre d'adresse ou le lien de partage.</p>
+              </div>
+            </div>
+              <div class="col-12 col-md-6 col-lg-3">
+               <div class="card card-glow fade-up h-100 text-center elevate">
+                 <div class="mb-3">
+                   <img src="./images/Paste Facebook Video URL.webp" alt="Coller l'URL de la vidéo Facebook" class="img-fluid">
+                 </div>
+                 <h3 class="h5 fw-semibold mb-2">Coller l'URL de la vidéo Facebook</h3>
+                 <p class="text-muted">Collez le lien de n'importe quelle vidéo Facebook dans la boîte ci-dessus pour commencer.</p>
+               </div>
+             </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card card-glow fade-up h-100 text-center elevate">
+                <div class="mb-3">
+                  <img src="./images/Preview & Choose Quality.webp" alt="Aperçu et choisir la qualité" class="img-fluid">
+                </div>
+                <h3 class="h5 fw-semibold mb-2">Aperçu et choisir la qualité</h3>
+                <p class="text-muted">Voyez un aperçu rapide et sélectionnez HD, SD ou Audio uniquement avant de télécharger sur votre appareil.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card card-glow fade-up h-100 text-center p-4 elevate">
+                <div class="mb-3"><i class="bi bi-download fs-1 text-secondary"></i></div>
+                <h3 class="h5 fw-semibold mb-2">Cliquer sur Télécharger</h3>
+                <p class="text-muted">Appuyez sur le bouton de téléchargement et votre vidéo ou audio sera sauvegardé instantanément—sans filigrane, sans connexion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="features" class="py-5 bg-light border-top">
+        <div class="container-xl">
+          <h2 class="fw-bold mb-4 text-center">Fonctionnalités</h2>
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4 text-center elevate">
+                <i class="bi bi-lightning-charge-fill fs-2 text-primary mb-2"></i>
+                <h3 class="h6 fw-semibold mb-2">Conversions rapides</h3>
+                <p class="text-muted mb-0">Notre pipeline optimisée prépare vos liens vidéo en quelques secondes pour une expérience fluide.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4 text-center elevate">
+                <i class="bi bi-easel2-fill fs-2 text-secondary mb-2"></i>
+                <h3 class="h6 fw-semibold mb-2">Options HD/SD</h3>
+                <p class="text-muted mb-0">Choisissez la qualité qui correspond à votre forfait de données et appareil—HD pour la clarté, SD pour la vitesse.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4 text-center elevate">
+                <i class="bi bi-music-note-beamed fs-2 text-success mb-2"></i>
+                <h3 class="h6 fw-semibold mb-2">MP4 et Audio uniquement</h3>
+                <p class="text-muted mb-0">Extrayez les bandes sonores ou discussions comme fichiers audio légers, ou téléchargez la vidéo complète en MP4.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4 text-center elevate">
+                <i class="bi bi-browser-chrome fs-2 text-primary mb-2"></i>
+                <h3 class="h6 fw-semibold mb-2">Basé sur navigateur (Sans app)</h3>
+                <p class="text-muted mb-0">Interface 100% basée sur navigateur—aucune app ou extension nécessaire. Collez et c'est parti.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4 text-center elevate">
+                <i class="bi bi-shield-lock-fill fs-2 text-success mb-2"></i>
+                <h3 class="h6 fw-semibold mb-2">Sécurisé et privé</h3>
+                <p class="text-muted mb-0">Nous ne suivons pas vos liens ni ne gardons de copies de vos fichiers. Votre vie privée est notre priorité.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4 text-center elevate">
+                <i class="bi bi-phone fs-2 text-secondary mb-2"></i>
+                <h3 class="h6 fw-semibold mb-2">Fonctionne sur mobile et bureau</h3>
+                <p class="text-muted mb-0">Bureau, tablette ou téléphone—téléchargez des vidéos Facebook n'importe où, n'importe quand.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-5 bg-white border-top" id="why">
+        <div class="container-xl">
+          <h2 class="fw-bold mb-4 text-center">Pourquoi choisir notre téléchargeur de vidéos Facebook</h2>
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-4">
+              <div class="h-100 text-center px-3">
+                <h3 class="h6 fw-semibold mb-2">Vitesse et fiabilité</h3>
+                <p class="text-muted">Notre outil est conçu pour la vitesse et le temps de fonctionnement. Obtenez vos liens de téléchargement en quelques secondes, avec un système robuste qui fonctionne quand vous en avez besoin.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="h-100 text-center px-3">
+                <h3 class="h6 fw-semibold mb-2">Confidentialité par conception</h3>
+                <p class="text-muted">Aucun compte requis, pas de suivi inutile. Nous ne traitons que ce qui est nécessaire pour livrer votre téléchargement—votre vie privée est toujours respectée.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="h-100 text-center px-3">
+                <h3 class="h6 fw-semibold mb-2">Mises à jour cohérentes et compatibilité</h3>
+                <p class="text-muted">Nous gardons notre outil à jour avec les changements de Facebook, assurant la compatibilité et une expérience fluide pour tous les utilisateurs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="faq" class="py-5 bg-light border-top">
+        <div class="container-xl">
+          <h2 class="fw-bold mb-4 text-center">Questions fréquemment posées</h2>
+          <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">C'est gratuit ?</h3>
+                <p class="text-muted mb-0">Oui, notre téléchargeur de vidéos Facebook est entièrement gratuit. Aucune inscription ou paiement requis.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">Puis-je télécharger des vidéos privées ?</h3>
+                <p class="text-muted mb-0">Non, seules les vidéos publiques sont supportées. Le contenu privé ou restreint ne peut pas être téléchargé pour des raisons de confidentialité.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">C'est sûr à utiliser ?</h3>
+                <p class="text-muted mb-0">Absolument. Nous ne stockons pas vos liens ou fichiers, et vos téléchargements sont traités en toute sécurité dans votre navigateur.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">Stockez-vous mes liens ou fichiers ?</h3>
+                <p class="text-muted mb-0">Non, nous ne stockons jamais vos liens vidéo ou fichiers téléchargés. Votre vie privée est notre priorité.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">Pourquoi certaines vidéos ne sont-elles pas téléchargeables ?</h3>
+                <p class="text-muted mb-0">Certaines vidéos peuvent être privées, restreintes ou protégées par le droit d'auteur. Seules les vidéos publiques sont supportées.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">Puis-je télécharger seulement l'audio ?</h3>
+                <p class="text-muted mb-0">Oui, vous pouvez extraire l'audio des vidéos Facebook comme fichiers légers pour la musique ou les podcasts.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">Fonctionne-t-il sur mobile ?</h3>
+                <p class="text-muted mb-0">Oui, notre outil est entièrement responsive et fonctionne sur n'importe quel appareil—téléphone, tablette ou bureau.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card card-glow h-100 p-4">
+                <h3 class="h6 fw-semibold mb-2">Comment signaler des problèmes ?</h3>
+                <p class="text-muted mb-0">Si vous rencontrez des problèmes, veuillez utiliser le formulaire de contact ci-dessous pour nous le faire savoir. Nous sommes là pour vous aider !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="safety" class="py-5 bg-white border-top">
+        <div class="container-xl">
+          <h2 class="fw-bold mb-3 text-center">Avertissement de sécurité et légal</h2>
+          <ul class="list-unstyled mx-auto mb-3" style="max-width:600px;">
+            <li class="mb-2"><i class="bi bi-shield-exclamation text-primary me-2"></i> Téléchargez uniquement du contenu que vous possédez ou pour lequel vous avez la permission d'utiliser.</li>
+            <li class="mb-2"><i class="bi bi-exclamation-circle text-secondary me-2"></i> Nous ne sommes pas affiliés à Facebook.</li>
+            <li class="mb-2"><i class="bi bi-gavel text-success me-2"></i> L'utilisation doit être conforme aux lois locales et aux conditions de la plateforme.</li>
+          </ul>
+          <div class="text-center">
+            <a href="/disclaimer" class="btn btn-link text-decoration-underline small" aria-label="Lire les directives complètes">Lire les directives complètes</a>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="py-5 bg-white border-top">
+        <div class="container-xl text-center">
+          <h2 class="fw-bold mb-3">Contact</h2>
+          <p class="text-muted mb-2">Vous avez des questions ou des commentaires ? Contactez-nous et nous vous répondrons dès que possible.</p>
+          <a href="/contact-us" class="btn btn-outline-primary pill elevate" aria-label="Contacter le support">Contacter le support</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-4" style="background-color: #3f5974;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-white mb-0">&copy; 2025 Téléchargeur de vidéos Facebook. Tous droits réservés.</p>
+                </div>
+                                    <div class="col-md-6 text-md-end">
+                        <div class="mt-2">
+                            <a href="/privacy-policy" class="text-white me-3">Politique de confidentialité</a>
+                            <a href="/terms-of-service" class="text-white me-3">Conditions d'utilisation</a>
+                            <a href="/contact-us" class="text-white me-3">Contact</a>
+                            <a href="/disclaimer" class="text-white">Avertissement légal</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://vkrdownloader.xyz/static/js/devdata.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    <script>
+      // Paste button functionality
+      document.getElementById('pasteBtn').addEventListener('click', async function() {
+        try {
+          const text = await navigator.clipboard.readText();
+          document.getElementById('inputUrl').value = text;
+          document.getElementById('inputUrl').focus();
+        } catch (err) {
+          console.log('Impossible de lire le contenu du presse-papiers: ', err);
+        }
+      });
+      
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(() => {
+          console.log('Service Worker Enregistré');
+        });
+      }
+    </script>
+</body>
+
+</html>

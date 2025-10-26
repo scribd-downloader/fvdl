@@ -63,6 +63,64 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <title>Disclaimer</title>
     <style>
+        /* Language dropdown styling */
+        .language-dropdown .dropdown-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .language-dropdown .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #3f5974;
+            transform: translateX(5px);
+        }
+
+        .language-dropdown .dropdown-item:active {
+            background-color: #e9ecef;
+            color: #3f5974;
+        }
+
+        .flag-icon {
+            font-size: 1.1em;
+            line-height: 1;
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: rgba(255, 255, 255, 1) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-menu.language-dropdown {
+            min-width: 200px;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: 0.5rem;
+        }
+
+        /* Active language indicator */
+        .navbar-nav .nav-link.active {
+            color: #fff !important;
+            font-weight: 500;
+        }
+
         .nav-bg{ background-color: #3f5974; }
         .nav-bg .nav-link { color: white !important; font-weight: 600; }
         .nav-bg .nav-link:hover { color: #f8f9fa !important; }
@@ -107,6 +165,17 @@
             .card-glow { padding: 2.5rem !important; }
         }
     </style>
+
+<!-- SEO: canonical & hreflang -->
+<link rel="canonical" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="en" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="es" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="pt-BR" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="de" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="fr" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="it" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="id" href="https://fvideosdownloader.com/disclaimer" />
+<link rel="alternate" hreflang="x-default" href="https://fvideosdownloader.com/disclaimer" />
 </head>
 <body>
     <!-- HEADER / NAVBAR (reused) -->
@@ -121,6 +190,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="flag-icon">🇺🇸</span> English
+                            </a>
+                            <ul class="dropdown-menu language-dropdown">
+                                <li><a class="dropdown-item" href="/"><span class="flag-icon">🇺🇸</span> English</a></li>
+                                <li><a class="dropdown-item" href="/es"><span class="flag-icon">🇪🇸</span> Español</a></li>
+                                <li><a class="dropdown-item" href="/pt"><span class="flag-icon">🇧🇷</span> Português</a></li>
+                                <li><a class="dropdown-item" href="/de"><span class="flag-icon">🇩🇪</span> Deutsch</a></li>
+                                <li><a class="dropdown-item" href="/fr"><span class="flag-icon">🇫🇷</span> Français</a></li>
+                                <li><a class="dropdown-item" href="/it"><span class="flag-icon">🇮🇹</span> Italiano</a></li>
+                                <li><a class="dropdown-item" href="/id"><span class="flag-icon">🇮🇩</span> Bahasa Indonesia</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                             <ul class="dropdown-menu">
