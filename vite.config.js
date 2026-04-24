@@ -43,6 +43,8 @@ export default defineConfig({
         { src: 'src/styles.css', dest: 'dist' },
         { src: 'google*.html', dest: 'dist' },
         { src: 'BingSiteAuth.xml', dest: 'dist' },
+        { src: 'ads.txt', dest: 'dist' },
+        { src: 'robots.txt', dest: 'dist' },
       ],
       hook: 'closeBundle',
     }),
