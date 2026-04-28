@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "start": "vite",
     "generate-sitemap": "vite build && vite-plugin-sitemap",
-   "build:js": "npx rollup -c rollup.config.js"
+   "build:js": "rollup -c rollup.config.js"
   },
   "keywords": [
     "facebook video downloader",
